@@ -84,7 +84,12 @@ Este scrip se corre en el computador externo para recibir el video y el valor de
 En el código fuente se podrá apreciar mejor las direcciones de los puertos USB de los sensores, la forma en que se obtuvieron los datos y el ejemplo de los comandos de control del CMS. las librerías y dependencias deben ser instaladas una a una, no hay un instalador.
 
 
+## IMU Orientation
 
+<p align="center"><img src="./img/imu-orientation.png" width="500"   alt=" " /></p>
+
+
+# Code
 
 ## server-CMS-IMU-Bene-Video-Temp.py
 ```python
