@@ -7,6 +7,10 @@
 
 <br>
 
+# Diagrama de Bloque del Circuito
+
+<p align="center"><img src="./img/diagrama.png" width="900"   alt=" " /></p>
+
 El demo corre desde la Raspberry hay que entrar por SSH, la RPi tiene una IP fija: 192.168.2.2. Hay 2 archivos por correr en la raíz de la RPi: ```server-CMS-IMU-Bene-Video-Temp.py``` y ```control_UART.js```.
 
 ## Acceso SSH a la RPi
@@ -21,13 +25,15 @@ password: 268613
 ```
 python3 server-CMS-IMU-Bene-Video-Temp.py
 ```
-<p align="center"><img src="./img/server.png" width="800"   alt=" " /></p>
 Server esperando la conexion del cliente en la IP:192.168.2.2:5000.
+<p align="center"><img src="./img/server.png" width="800"   alt=" " /></p>
+
 
 <br>
 
-<p align="center"><img src="./img/data.png" width="800"   alt=" " /></p>
 Cuando entra el cliente comienza la lectura de la data. Solo se muestra, nada se almacena, esto es solo un demo.
+<p align="center"><img src="./img/data.png" width="800"   alt=" " /></p>
+
 
 <br>
 
@@ -39,7 +45,7 @@ Este corre el server que transmite el video de la cámara y la distancia del sen
 node control_UART.js
 ```
 
-<p align="center"><img src="./img/control.png" width="500"   alt=" " /></p>
+<p align="center"><img src="./img/control.png" width="800"   alt=" " /></p>
 
 Este corre un script en nodejs para el control del CMS, básicamente envía unos comandos al circuito del driver de los motores para controlar los movimientos básicos del CMS. Al correrlo se abrirá un pequeño menú que dirá las teclas que mueven el dispositivo. El circuito del driver esta en el puerto  ```"/dev/ttyS0" ``` a  ```115200 baudRate ``` y es un ESP32 mini, los driver de los motores son el EasyDriver v4.3 uno por cada motor. Con "ctrl + c " cerramos el la app de control.
 
@@ -70,7 +76,7 @@ El driver compuesto por el ESP32 y los EasyDriver admite basicamente estos coman
 python3 cliente-CMS.py
 ```
 
-<p align="center"><img src="./img/cliente.png" width="600"   alt=" " /></p>
+<p align="center"><img src="./img/cliente.png" width="800"   alt=" " /></p>
 
 Este scrip se corre en el computador externo para recibir el video y el valor de la distancia que está midiendo el sensor benewake, al correrlo se abre una ventana que muestra el video y dentro de ella el valor de distancia que mide el sensor. con "q" o "ctrl + c " cerramos el cliente.
 
@@ -484,7 +490,7 @@ while True:
 
 ```
 
-deben instalaarse las siguientes dependencias en el computador:
+deben instalarse las siguientes dependencias en el computador externo:
 		
 ```
 sudo apt-get install python3-opencv -y // capture imagen
@@ -707,8 +713,9 @@ void DisableMotores()
 
 # Observations
 
-* La RPi posee un disipador un pequeño disipador de calor y un ventilador que permite tener una temperatura estable de trabajo no mayor a 52 grados centígrados, por largas horas de uso. Pudiendo soportar casi 20 grados centígrados mas en uso antes de fallar.
+* La RPi posee un disipador de calor pequeño y un ventilador que permite tener una temperatura estable de trabajo no mayor a 52 grados centígrados, por largas horas de uso. Pudiendo soportar casi 20 grados centígrados más en uso real antes de fallar.
 * Para futuras mejoras se podría agregar un enconder o sensor de movimiento al motor 1 que contiene todo el cuerpo del equipo el cual gira 360 grados.
+* El equipo necesitara sensores de distancia que permitan verificar cuando el equipo pueda moverse dentro de la cavidad sin chocar con el ambiente que le rodea.
 * Es posible agregar un sensor que permita medir la corriente del equipo en caso de un atascamiento del mismo que no permita el movimiento o funcionamiento normal del equipo.
 * Para conectarse vía SSH a la computadora del CMS es requerido una caja de comunicación  Fathom-X Tether Interface (FXTI). Lo que nos permite usar un cable coaxial de hasta 1km de largo.
 * El dispositivo CMS puede operar a 12V / 2A para las pruebas, pero lo ideal es usar 14V / 5A para mayor desempeño de los motores.
