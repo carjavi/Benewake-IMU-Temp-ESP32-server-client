@@ -86,8 +86,11 @@ En el código fuente se podrá apreciar mejor las direcciones de los puertos USB
 
 ## IMU Orientation
 
+En esta imagen se muestra como se instalo la IMU en el cabezal del CMS y la distancia aproximada al eje de rotación y al laser.
+
 <p align="center"><img src="./img/imu-orientation.png" width="500"   alt=" " /></p>
 
+> :warning: **Warning:** Puede que la IMU se mueva de su ubicación si el CMS manipula internamente.
 
 # Code
 
