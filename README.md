@@ -1,5 +1,5 @@
 <p align="center"><img src="./img/demo.png" width="800"   alt=" " /></p>
-<h1 align="center"> cms-demo </h1> 
+<h1 align="center"> Benewake-IMU-Temp-ESP32 </h1> 
 <h4 align="right">May 24</h4>
 
 <img src="https://img.shields.io/badge/OS-Linux%20GNU-yellowgreen">
@@ -83,14 +83,7 @@ Este scrip se corre en el computador externo para recibir el video y el valor de
 # More information 
 En el código fuente se podrá apreciar mejor las direcciones de los puertos USB de los sensores, la forma en que se obtuvieron los datos y el ejemplo de los comandos de control del CMS. las librerías y dependencias deben ser instaladas una a una, no hay un instalador.
 
-
-## IMU Orientation
-
-En esta imagen se muestra como se instalo la IMU en el cabezal del CMS y la distancia aproximada al eje de rotación y al laser.
-
-<p align="center"><img src="./img/imu-orientation.png" width="500"   alt=" " /></p>
-
-> :warning: **Warning:** Puede que la IMU se mueva de su ubicación si el CMS manipula internamente.
+<br>
 
 # Code
 
