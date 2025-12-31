@@ -13,12 +13,6 @@
 
 El demo corre desde la Raspberry hay que entrar por SSH, la RPi tiene una IP fija: 192.168.2.2. Hay 2 archivos por correr en la raíz de la RPi: ```server-CMS-IMU-Bene-Video-Temp.py``` y ```control_UART.js```.
 
-## Acceso SSH a la RPi
-Usando caja de comunicación  Fathom-X Tether Interface (FXTI). Recordar que debe estar en la misma red para poder ingresar por SSH.
-```
-ssh carjavi@192.168.2.2
-password: 268613
-```
 
 # Run Demo
 ## Transmisión de video mediante el server
